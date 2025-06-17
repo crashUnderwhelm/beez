@@ -66,35 +66,38 @@
   </g>
   </svg>
   <script>
-    const svg = document.getElementById('parallaxSVG');
-    const layers = {
-      bg: { element: document.getElementById('bg'), depth: 0 },
-      ring: { element: document.getElementById('ring'), depth: 0.1 },
-      wings: { element: document.getElementById('wings'), depth: 0.2 },
-      antenna: { element: document.getElementById('antenna'), depth: 0.3 },
-      body: { element: document.getElementById('body'), depth: 0.4 },
-      eyes: { element: document.getElementById('eyes'), depth: 0.7 },
-      mouth: { element: document.getElementById('mouth'), depth: 0.6 },
-      hat: { element: document.getElementById('hat'), depth: 0.5 }
-    };
-    document.addEventListener('mousemove', (e) => {
-      const { innerWidth, innerHeight } = window;
-      const x = (e.clientX / innerWidth - 0.5) * 2;
-      const y = (e.clientY / innerHeight - 0.5) * 2;
-      for (const key in layers) {
-        const { element, depth } = layers[key];
-        const tx = x * depth * 20;
-        const ty = y * depth * 20;
-        element.setAttribute('transform', `translate(${tx}, ${ty})`);
-      }
-    });
-        document.addEventListener('touchmove', (e) => {
-    if (e.touches.length > 0) {
-      const touch = e.touches[0];
-      const x = (touch.clientX / window.innerWidth - 0.5) * 2;
-      const y = (touch.clientY / window.innerHeight - 0.5) * 2;
-      applyParallax(x, y);
+  function applyParallax(xRatio, yRatio) {
+    for (const key in layers) {
+      const { element, depth } = layers[key];
+      const tx = xRatio * depth * 20;
+      const ty = yRatio * depth * 20;
+      element.setAttribute('transform', `translate(${tx}, ${ty})`);
     }
+  }
+    
+  let isMouseDown = false;
+  document.addEventListener('mousedown', () => isMouseDown = true);
+  document.addEventListener('mouseup', () => isMouseDown = false);
+  document.addEventListener('mousemove', (e) => {
+    if (!isMouseDown) return;
+    const x = (e.clientX / window.innerWidth - 0.5) * 2;
+    const y = (e.clientY / window.innerHeight - 0.5) * 2;
+    applyParallax(x, y);
+  });
+
+  let isTouching = false;
+  document.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) isTouching = true;
+  });
+  document.addEventListener('touchend', () => {
+    isTouching = false;
+  });
+  document.addEventListener('touchmove', (e) => {
+    if (!isTouching || e.touches.length !== 1) return;
+    const touch = e.touches[0];
+    const x = (touch.clientX / window.innerWidth - 0.5) * 2;
+    const y = (touch.clientY / window.innerHeight - 0.5) * 2;
+    applyParallax(x, y);
   }, { passive: true });
   </script>
 </body>
