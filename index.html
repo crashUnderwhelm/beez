@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>beez</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background-color: #000;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    svg {
+      width: 80vmin;
+      height: 80vmin;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <svg id="beez" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+  <g id="bg">
+    <rect id="black" width="400" height="400" fill="#101724"/>
+  </g>
+  <g id="outline">
+    <path id="ring" d="M200.52,6.04C93.11,6.04,6.04,93.11,6.04,200.52s87.07,194.48,194.48,194.48,194.48-87.07,194.48-194.48S307.93,6.04,200.52,6.04ZM200.52,360.49c-88.35,0-159.97-71.62-159.97-159.97S112.17,40.55,200.52,40.55s159.97,71.62,159.97,159.97-71.62,159.97-159.97,159.97Z" fill="#6257a5"/>
+  </g>
+  <g id="wings">
+    <path id="outlineR" d="M200.43,288.65c-9.71-33.41-20.67-93,31.05-117.44,45.96-21.72,110.98-4.74,128.38,25.4,17.4,30.13-8.31,80.57-52.49,105.72-42.94,24.44-97.72,18.04-106.94-13.67Z"/>
+    <path id="outlineL" d="M199.19,288.65c9.71-33.41,20.67-93-31.05-117.44-45.96-21.72-110.98-4.74-128.38,25.4-17.4,30.13,8.31,80.57,52.49,105.72s97.72,18.04,106.94-13.67Z"/>
+    <path id="innerR" d="M200.4,285.54c-9.1-31.3-19.36-87.13,29.1-110.03,43.06-20.35,103.98-4.44,120.28,23.79,16.3,28.23-7.78,75.48-49.18,99.05s-91.56,16.9-100.2-12.81Z" fill="#b5539f"/>
+    <path id="innerL" d="M199.22,285.54c9.1-31.3,19.36-87.13-29.1-110.03-43.06-20.35-103.98-4.44-120.28,23.79-16.3,28.23,7.78,75.48,49.18,99.05s91.56,16.9,100.2-12.81Z" fill="#b5539f"/>
+  </g>
+  <g id="antenna">
+    <rect id="stalkR" x="280.05" y="54.66" width="9.83" height="109.89"/>
+    <rect id="stalkL" x="111.05" y="54.66" width="9.83" height="109.89"/>
+    <circle id="tipR" cx="284.84" cy="54.66" r="9.74" fill="#a7ce38"/>
+    <circle id="tipL" cx="115.84" cy="54.66" r="9.74" fill="#a7ce38"/>
+  </g>
+  <g id="body">
+    <polygon id="stinger" points="200.52 335.67 189.96 353.39 200.52 371.1 211.08 353.39 200.52 335.67"/>
+    <circle id="boddy_inner" cx="199.62" cy="231.88" r="120.38" fill="#a7ce38"/>
+    <polygon id="stripe2" points="234.69 354.36 164.41 354.36 112.63 320.36 286.47 320.36 234.69 354.36" fill="#101724"/>
+    <polygon id="stripe1" points="307.08 291.47 92.17 291.47 79.24 264.36 320 264.36 307.08 291.47" fill="#101724"/>
+    <path d="M199.35,101.61c-71.57,0-129.59,58.02-129.59,129.59s58.02,129.59,129.59,129.59,129.59-58.02,129.59-129.59-58.02-129.59-129.59-129.59ZM199.62,352.26c-66.48,0-120.38-53.9-120.38-120.38s53.9-120.38,120.38-120.38,120.38,53.9,120.38,120.38-53.9,120.38-120.38,120.38Z"/>
+  </g>
+  <g id="eyes">
+    <circle id="eyeR" cx="264.52" cy="210.03" r="25" fill="#101724"/>
+    <circle id="eyeL" cx="135.19" cy="210.03" r="25" fill="#101724"/>
+    <circle id="sparkleR" cx="259.58" cy="204.37" r="8.53" fill="#fff"/>
+    <circle id="sparkleL" cx="129.58" cy="204.37" r="8.53" fill="#fff"/>
+  </g>
+  <g id="mouth">
+    <path id="smile" d="M208.02,211.58c.25.81.39,1.67.39,2.56,0,4.73-3.83,8.56-8.56,8.56s-8.56-3.83-8.56-8.56c0-.89.14-1.75.39-2.56h-11.65c-.11.84-.18,1.69-.18,2.56,0,11.05,8.95,20,20,20s20-8.95,20-20c0-.87-.07-1.72-.18-2.56h-11.65Z" fill="#101724"/>
+  </g>
+  <g id="hat">
+    <path id="top_outline" d="M297.48,139.92c1.23-4.99,1.88-10.14,1.88-15.42,0-43.95-44.69-79.58-99.81-79.58s-99.81,35.63-99.81,79.58c0,5.28.65,10.43,1.88,15.42h195.87Z"/>
+    <path id="top" d="M285.52,139.92c1.39-4.96,2.14-10.12,2.14-15.42,0-38.8-39.45-70.25-88.11-70.25s-88.11,31.45-88.11,70.25c0,5.3.74,10.46,2.14,15.42h171.94Z" fill="#b5539f"/>
+    <rect id="front_outline" x="160.19" y="35.32" width="79.33" height="109.43"/>
+    <rect id="front" x="170.01" y="43.76" width="59.68" height="96.32" fill="#b5539f"/>
+    <rect id="brim_outline" x="84.08" y="126.25" width="231.33" height="27.67" rx="13.83" ry="13.83"/>
+    <rect id="brim" x="92.24" y="135.58" width="215" height="9.17" rx="4.58" ry="4.58" fill="#b5539f"/>
+  </g>
+  </svg>
+  <script>
+    const svg = document.getElementById('parallaxSVG');
+    const layers = {
+      bg: { element: document.getElementById('bg'), depth: 0 },
+      ring: { element: document.getElementById('ring'), depth: 0.1 },
+      wings: { element: document.getElementById('wings'), depth: 0.2 },
+      antenna: { element: document.getElementById('antenna'), depth: 0.3 },
+      body: { element: document.getElementById('body'), depth: 0.4 },
+      eyes: { element: document.getElementById('eyes'), depth: 0.7 },
+      mouth: { element: document.getElementById('mouth'), depth: 0.6 },
+      hat: { element: document.getElementById('hat'), depth: 0.5 }
+    };
+    document.addEventListener('mousemove', (e) => {
+      const { innerWidth, innerHeight } = window;
+      const x = (e.clientX / innerWidth - 0.5) * 2;
+      const y = (e.clientY / innerHeight - 0.5) * 2;
+      for (const key in layers) {
+        const { element, depth } = layers[key];
+        const tx = x * depth * 20;
+        const ty = y * depth * 20;
+        element.setAttribute('transform', `translate(${tx}, ${ty})`);
+      }
+    });
+  </script>
+</body>
+</html>
